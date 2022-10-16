@@ -45,6 +45,8 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "folke/tokyonight.nvim" -- Colorscheme
+  use "vim-airline/vim-airline" --status/tabline for vim
+  use "vim-airline/vim-airline-themes" --theme for status/tabline
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
