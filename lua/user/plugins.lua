@@ -51,44 +51,48 @@ return packer.startup(function(use)
 
 --Toggleterm
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-  require("toggleterm").setup()
-end}
+        require("toggleterm").setup()
+    end}
 
---CMP
-      use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    --CMP
+    use "hrsh7th/nvim-cmp" -- The completion plugin
+    use "hrsh7th/cmp-buffer" -- buffer completions
+    use "hrsh7th/cmp-path" -- path completions
+    use "hrsh7th/cmp-cmdline" -- cmdline completions
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
---Nvim-tree
-use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
-}
---Airlines
+    -- snippets
+    use "L3MON4D3/LuaSnip" --snippet engine
+    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+    --Nvim-tree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+    --Airlines
     use "vim-airline/vim-airline" --status/tabline for vim
     use "vim-airline/vim-airline-themes" --theme for status/tabline
-  
---Telescope
-  use "nvim-telescope/telescope.nvim"
 
---Treesitter
-  use {
+    --Telescope
+    use "nvim-telescope/telescope.nvim"
+
+    --Treesitter
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     }
-  use "p00f/nvim-ts-rainbow"
-  use "nvim-treesitter/playground"
+    use "p00f/nvim-ts-rainbow"
+    use "nvim-treesitter/playground"
 
-      -- Git
-  use "lewis6991/gitsigns.nvim"
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+    -- Git
+    use "lewis6991/gitsigns.nvim"
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
 end)
