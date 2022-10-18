@@ -6,4 +6,8 @@ if not status_ok then
     return
 end
 
+<<<<<<< HEAD
 vim.g['airline_theme']='fahrenheit'
+=======
+vim.g['airline_theme'] = 'light'
+>>>>>>> refs/remotes/origin/main
