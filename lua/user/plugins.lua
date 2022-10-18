@@ -47,6 +47,10 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim" -- Colorscheme
   use "vim-airline/vim-airline" --status/tabline for vim
   use "vim-airline/vim-airline-themes" --theme for status/tabline
+  use "fcpg/vim-fahrenheit" -- Colorscheme
+  use "fcpg/vim-farout" -- Colorscheme
+  use "fcpg/vim-orbital" -- Colorscheme
+  use "tpope/vim-fugitive" -- Vim plugin for Git
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
