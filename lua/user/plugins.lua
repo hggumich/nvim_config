@@ -49,6 +49,11 @@ return packer.startup(function(use)
     use "numToStr/Comment.nvim" -- Easily comment stuff
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+--Toggleterm
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  require("toggleterm").setup()
+end}
+
 --CMP
       use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
