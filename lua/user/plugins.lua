@@ -47,6 +47,10 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim" -- Colorscheme
   use "vim-airline/vim-airline" --status/tabline for vim
   use "vim-airline/vim-airline-themes" --theme for status/tabline
+  
+--Telescope
+  use "nvim-telescope/telescope.nvim"
+--  use "nvim-telescope/telescope-media-files.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
