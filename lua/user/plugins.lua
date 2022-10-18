@@ -56,7 +56,6 @@ return packer.startup(function(use)
   end
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Easily comment stuff
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
 
 --Toggleterm
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
