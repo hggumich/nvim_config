@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\hectorg\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  gruvbox = {
+    loaded = true,
+    path = "C:\\Users\\hectorg\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "C:\\Users\\hectorg\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-autopairs",
