@@ -26,41 +26,44 @@ vim.cmd [[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  return
+    return
 end
 
 -- Have packer use a popup window
 packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
+    display = {
+        open_fn = function()
+            return require("packer.util").float { border = "rounded" }
+        end,
+    },
 }
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+    -- My plugins here
+    use "wbthomason/packer.nvim" -- Have packer manage itself
+    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+    use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-  -- Colorschemes
-  use "morhetz/gruvbox" -- Colorscheme
-  use "folke/tokyonight.nvim" -- Colorscheme
-  use "fcpg/vim-fahrenheit" -- Colorscheme
-  use "fcpg/vim-farout" -- Colorscheme
-  use "fcpg/vim-orbital" -- Colorscheme
+    -- Colorschemes
+    use "morhetz/gruvbox" -- Colorscheme
+    use "folke/tokyonight.nvim" -- Colorscheme
+    use "fcpg/vim-fahrenheit" -- Colorscheme
+    use "fcpg/vim-farout" -- Colorscheme
+    use "fcpg/vim-orbital" -- Colorscheme
 
-  -- Git Plugin
-  use "tpope/vim-fugitive" -- Vim plugin for Git
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+    -- Git Plugin
+    use "tpope/vim-fugitive" -- Vim plugin for Git
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
+    use "kdheepak/lazygit.nvim"
+
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Easily comment stuff
+
 
 --Toggleterm
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -91,7 +94,13 @@ return packer.startup(function(use)
     use "vim-airline/vim-airline-themes" --theme for status/tabline
 
     --Telescope
-    use "nvim-telescope/telescope.nvim"
+    use({
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+    config = function()
+        require("telescope").load_extension("lazygit")
+    end,
+})
 
     -- Git
     use "lewis6991/gitsigns.nvim"
